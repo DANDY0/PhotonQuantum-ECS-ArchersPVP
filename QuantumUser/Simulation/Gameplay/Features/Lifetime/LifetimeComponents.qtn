@@ -1,0 +1,6 @@
+    component MaxHp { FP Value; }
+    component CurrentHp { FP Value; }
+    component Dead { } 
+    component ProcessingDeath { }
+    
+    component Kill {}

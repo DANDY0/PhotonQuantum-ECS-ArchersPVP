@@ -1,0 +1,28 @@
+component WeaponId { EWeaponId Value; }
+component AbilityCardId { EAbilityCardId Value; }
+
+component BowShotWeapon { }
+component OrbitalShotWeapon { }
+
+component WeaponsActive { }
+
+enum EWeaponId 
+{
+    None = 0,
+    BowShot = 1,
+    OrbitalShot = 2,
+}
+
+enum EAbilityCardId 
+{
+    None = 0,
+    //Bow Shots
+    FireArrow = 101,
+    FrostArrow = 102,
+    PoisonArrow = 103,
+    
+    //Orbital Shots
+    FireBall = 201,
+    FrostBall = 202,
+    PoisonBall = 203,
+}

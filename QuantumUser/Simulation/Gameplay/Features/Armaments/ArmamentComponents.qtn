@@ -1,0 +1,27 @@
+component Armament { }
+component TargetLimit { int Value; }
+component TargetsHitCooldown { list<EntityRef> Value; }
+component HitBuffer { list<EntityRef> Value; }
+component Processed { }
+component FollowingProducer { }
+component EffectSetups { list<EffectSetup> Value; }
+component StatusSetups { list<StatusSetup> Value; }
+component TargetRelations { list<ETeamRelation> Value; }
+
+component PendingShotsCount { int Value; }
+component PendingShotInterval { FP Value; }
+component ProjectilesCount { int Value; }
+component WeaponRef { EntityRef Value; }
+
+event BasicShotCreated
+{ 
+    EntityRef Value;
+    list<StatusSetup> Statuses;
+}
+
+enum ETeamRelation
+{
+    Owner = 0,
+    Ally = 1,
+    Enemy = 2
+}

@@ -1,0 +1,26 @@
+component Effect { }
+component ProducerId { EntityRef Value; }
+component TargetId { EntityRef Value; }
+component EffectValue { FP Value; }
+
+component DamageEffect { }
+component HealEffect { }
+
+[Serializable]
+struct EffectSetup
+{
+    EffectTypeId EffectTypeId;
+    FP Value;
+}
+
+enum EffectTypeId
+{
+     Unknown = 0,
+     Damage = 1,
+     Heal = 2
+}
+
+event DamageTaken { 
+    EntityRef Entity;
+    FP Value;
+}

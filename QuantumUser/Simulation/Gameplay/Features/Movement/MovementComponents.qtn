@@ -1,0 +1,20 @@
+component Speed { FP Value; }
+component WorldPosition { FPVector3 Value; }
+component Direction { FPVector3 Value; }
+component UltDirection { FPVector3 Value; }
+component LookDirection { FPVector3 Value; }
+component RotationSpeed { FP Value; }
+component InstantRotation { }
+component Moving { }
+component MovementAvailable { }
+component OrbitCenterPosition { FPVector3 Value; }
+component OrbitCenterFollowTarget { EntityRef Value; }
+component OrbitLevel { EOrbitLevel Value; }
+component OrbitPhase { FP Value; }
+
+enum EOrbitLevel 
+{
+    First = 0,
+    Second = 1,
+    Third = 2,
+}

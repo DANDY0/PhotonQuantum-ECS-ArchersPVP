@@ -1,0 +1,5 @@
+component Cooldown { FP Value; }
+component CooldownLeft { FP Value; }
+component CooldownUp { }
+
+component BushTemporaryReveal { FP Value; }

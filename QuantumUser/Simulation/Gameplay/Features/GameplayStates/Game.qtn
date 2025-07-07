@@ -1,0 +1,31 @@
+enum GameState
+{
+    None, Initialization, MatchIntro, RoundStartCountDown, Running, RoundEnded, GameOver
+}
+
+global
+{
+    GameState GameState;
+    CountdownTimer GameStateTimer;
+    CountdownTimer MainGameTimer;
+	array<int>[2] MatchScore;
+}
+
+struct CountdownTimer
+{
+    FP TimeLeft;
+    FP StartTime;
+}
+
+signal OnRoundEnded(Owner winner, Owner loser, bool isDraw);
+signal OnGameRunning();
+signal OnRoundStartCountDown();
+signal OnGameOver(Owner winner);
+
+synced event OnInitialization { }
+synced event OnMatchIntro { }
+synced event OnRoundStartCountDown { bool IsFirst; }
+synced event OnGameRunning { }
+synced event OnRoundEnded { Owner winner; Owner loser; bool isDraw; }
+synced event OnGameOver { Owner winner; }
+synced event OnGameRestarted { }

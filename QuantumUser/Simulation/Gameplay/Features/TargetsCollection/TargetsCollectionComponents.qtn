@@ -1,0 +1,8 @@
+component ReadyToCollectTargets { }
+component CollectingTargetsContinuously { }
+component TargetBuffer { list<EntityRef> Value; }
+component ProcessedTargets { list<EntityRef> Value; }
+component CollectTargetsInterval { FP Value; }
+component CollectTargetsTimer { FP Value; }
+component TargetLayerMask { int Value; }
+component Reached { }

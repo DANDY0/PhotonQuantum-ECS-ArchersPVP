@@ -1,0 +1,16 @@
+enum EPlayerAnimationState {
+    None, Idle, Run, Attack
+}
+
+struct PlayerAnimationStateStruct {
+    EPlayerAnimationState Value;
+}
+
+component PlayerAnimationState {
+    PlayerAnimationStateStruct Value;
+}
+
+event PlayerIdle { EntityRef Value; }
+event PlayerRun { EntityRef Value; }
+event PlayerAttack { EntityRef Value; }
+event PlayerDead { EntityRef Value; }

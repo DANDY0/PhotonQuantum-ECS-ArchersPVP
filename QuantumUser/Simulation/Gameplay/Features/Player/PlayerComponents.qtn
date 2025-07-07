@@ -1,0 +1,63 @@
+component PlayerActionState { EPlayerActionState Value; }
+component PlayerLifeState { EPlayerLifeState Value; }
+component CurrentTarget { PlayerLink Value; }   
+
+component MuzzleOffset { FPVector3 Value; }   
+component AttackPreparingDelay { FP Value; }
+component UltProcessing { }
+
+component Dummy { }
+
+component ObstaclePreventsAttack { PlayerLink Value; }   
+component InBush { }
+component IsVisibleToEnemies { }
+   
+component HiddenPreventsAttack { }
+component TemporaryTargetable { }   
+
+
+enum EPlayerActionState 
+{
+    None,
+    Idle,
+    Moving,
+    AttackPreparing,
+    Attacking,
+    UltAiming,
+    UltProcessing
+}
+
+component AttackRange 
+{
+    FP MinRange;
+    FP MaxRange;
+    FP CurrentRange;
+    FP ExpansionRate;
+    FP ContractionRate;
+}
+
+enum EPlayerLifeState 
+{
+    None,
+    Alive,
+    Dead
+}
+
+event PlayerSetupedEvent
+{ 
+    PlayerLink PlayerLink;
+    int TeamIndex;
+}
+
+event PlayerAttackedEvent
+{
+    PlayerLink PlayerLink;
+    int TeamIndex;
+}
+
+synced event PlayerRespawned { EntityRef Value; }
+
+signal RespawnPlayer(PlayerLink playerLink);
+signal SetupPlayer(Owner owner, FPVector3 at, bool isRespawn, bool isDummy);
+
+signal PlayerDead(Owner owner);

@@ -1,0 +1,46 @@
+component Status { }
+
+component StatusTypeId { EStatusTypeId Value; }
+
+component Duration { FP Value; }
+component TimeLeft { FP Value; }
+
+component Period { FP Value; }
+component TimeSinceLastTick { FP Value; }
+component ApplierStatusLink { int Value; }
+component Applied { }
+component Affected { }
+component Unapplied { }
+
+component Fire { }
+component Freeze { }
+component Poison { }
+
+component StatusEffectTypeId { EStatusEffectTypeId Value; }
+
+[Serializable]
+struct StatusSetup
+{
+    EStatusTypeId StatusTypeId;
+    EStatusEffectTypeId StatusEffectTypeId;
+    FP Value;
+    FP Duration;
+    FP Period;
+}
+
+enum EStatusEffectTypeId 
+{
+    Unknown = 0,
+    TicDamage = 1,
+    SlowSpeed = 2,
+}
+
+enum EStatusTypeId 
+{
+    Unknown = 0,
+    Fire = 1,
+    Freeze = 2,
+    Poison = 3
+}
+
+

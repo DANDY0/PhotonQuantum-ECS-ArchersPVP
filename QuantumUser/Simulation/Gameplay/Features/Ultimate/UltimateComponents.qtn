@@ -1,0 +1,11 @@
+﻿component Ultimate { }
+component UltimateId { EUltimateId Value; }
+component BasicUltimate { }
+component WasUltimating { }
+
+
+enum EUltimateId 
+{
+    Unknown = 0,
+    Basic = 1,
+}

@@ -1,0 +1,13 @@
+component BaseStats { dictionary<EStats, FP> Value; }
+component StatsModifiers { dictionary<EStats, FP> Value; }
+component StatChange { EStats Value; }
+
+
+enum EStats
+{
+    Unknown = 0,
+    Speed = 1,
+    MaxHp = 2,
+    AttackDelay = 3,
+    
+}

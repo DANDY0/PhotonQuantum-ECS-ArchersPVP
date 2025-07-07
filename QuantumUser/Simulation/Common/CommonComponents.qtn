@@ -1,0 +1,34 @@
+component PlayerLink 
+{ 
+    PlayerRef Value;
+    EntityRef Entity;
+}
+
+component Owner
+{
+    PlayerLink Link;
+    int TeamIndex;
+}
+
+component BushCollider {}
+component ObstacleEntity {}
+
+component SelfDestructTimer { FP Value; }
+component Destructed { }
+component Radius { FP Value; }
+
+event PlayersIntroStarted {}
+event PlayersIntroFinished {}
+
+input {
+	button LeftButton;
+	button RightButton;
+	button UpButton;
+	button DownButton;
+	
+	FPVector3 Direction;
+	FPVector3 UltDirection;
+	FPVector3 FinalUltDirection;
+	
+	bool IsUltimate;
+}
